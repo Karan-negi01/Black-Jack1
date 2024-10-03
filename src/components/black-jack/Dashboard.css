@@ -1,224 +1,328 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.dashboard{
+
+.dashboard {
     width: 100%;
     height: 100vh;
     border: 2px solid black;
     display: flex;
 }
-.left_dashboard{
+
+.left_dashboard {
     width: 17%;
-    
     height: 100vh;
     background: black;
     display: flex;
     flex-direction: column;
     color: white;
 }
-.logo{
-    width:100%;
+
+.logo {
+    width: 100%;
 }
-.dashboard-menu{
+
+.dashboard-menu {
     width: 100%;
     margin-top: 60px;
     height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
-    
-    
 }
-.dropdown-menu{
+
+.dropdown-menu {
     display: flex;
- 
+    border: 2px solid pink;
     width: 100%;
-    
     height: 5vh;
     align-items: center;
     cursor: pointer;
-   
-    
-}
-.menu-icons{
-   font-size: 28px;
- 
-   width: 20%;
-   margin-left: 8%;
+    transition: background-color 0.3s ease;
 }
 
+.dropdown-menu:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
 
+.menu-icons {
+    font-size: 28px;
+    width: 20%;
+    margin-left: 8%;
+}
 
-
-
-.right_dashboard{
+.right_dashboard {
     width: 83%;
     border: 2px solid green;
+    min-height: 100vh;
     height: auto;
+    padding: 20px;
+    background-color: #f4f4f4; /* Background color to distinguish the right section */
+    display: flex;
+    flex-direction: column;
 }
-.right-header{
+
+.right-header {
     width: 100%;
     height: 10vh;
     border-bottom: 1px solid grey;
     display: flex;
-  
 }
-.left-part{
+
+.left-part {
     width: 50%;
-   
     height: auto;
     display: flex;
-
-   
-    
 }
-.header-box{
+
+.header-box {
     width: 40%;
-    
     height: auto;
     display: flex;
     align-items: center;
     margin-left: 30px;
 }
-.header-dashboard{
+
+.header-dashboard {
     width: 50%;
     height: auto;
     font-size: 20px;
     cursor: pointer;
-  
-    
 }
-.header-settings{
+
+.header-settings {
     width: 50%;
-    height: auto;   
+    height: auto;
     font-size: 20px;
     cursor: pointer;
 }
-.right-part{
+
+.right-part {
     width: 50%;
-  
     height: auto;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.header-icons{
+
+.header-icons {
     font-size: 24px;
     margin-right: 20px;
     cursor: pointer;
 }
-.right-box{
+
+.right-box {
     width: 100%;
     height: 30vh;
-   
     display: flex;
-    
     justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
-.box1{
+
+.box1, .box2, .box3, .box4 {
     width: 23%;
     height: 23vh;
-    
     background: #5856D6;
     border-radius: 10px;
     padding: 25px;
     color: #fff;
     cursor: pointer;
-    
-    
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.box-number{
+
+.box1:hover, .box2:hover, .box3:hover, .box4:hover {
+    transform: scale(1.05);
+}
+
+.box-number {
     font-size: 28px;
     margin-bottom: 10px;
 }
-.box-text{
+
+.box-text {
     font-size: 18px;
 }
-.box2{
-    width: 23%;
-    height: 23vh;
-    
+
+.box2 {
     background: #3399FF;
-    border-radius: 10px;
-    padding: 25px;
-    color: #fff;
-    cursor: pointer;
 }
 
-.box3{
-    width: 23%;
-    height: 23vh;
-    
+.box3 {
     background: #F9B115;
-    border-radius: 10px;
-    padding: 25px;
-    color: #fff;
-    cursor: pointer;
 }
-.box4{
-    width: 23%;
-    height: 23vh;
-   
+
+.box4 {
     background: #E55353;
-    border-radius: 10px;
-    padding: 25px;
-    color: #fff;
-    cursor: pointer;
 }
+
 .chart-container {
-    width: 95%;
-    
-    margin: auto;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    height: 40vh;
-  }
-  
-  .chart-header {
+    width: 98%;
+    height: 50vh;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid rgba(128, 128, 128, 0.499);
+    background-color: #fff; /* Ensure the chart background stands out */
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-heading {
     text-align: left;
     margin-left: 20px;
     margin-bottom: 10px;
-  }
-  
-  .chart-header h2 {
+}
+
+.chart-header h2 {
     font-size: 24px;
     margin: 0;
-  }
-  
-  .chart-header p {
+}
+
+.chart-header p {
     font-size: 14px;
     color: #666;
     margin: 5px 0 15px 0;
-  }
-  
-  .toggle-buttons {
+}
+
+.toggle-buttons {
     display: flex;
     justify-content: flex-end;
-    
-  }
-  
-  .toggle-buttons button {
+    margin-bottom: 20px;
+    width: 40%;
+}
+
+.toggle-buttons button {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 5px 10px;
     margin-left: 5px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .toggle-buttons button.active {
+    width: 18%;
+    height: 6vh;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-buttons button.active {
     background-color: #6c63ff;
     color: #fff;
     border: none;
-  }
-.karan{
-    width: 100%;
-    border: 2px solid red;
-    margin-left: 20px;
 }
+
+.toggle-buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* 
+Add form restaru css */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4070f4;
+  font-family: 'Poppins', sans-serif;
+} */
+.wrapper{
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.wrapper h2{
+  position: relative;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  top: 4px;
+  text-align: center;
+}
+.wrapper h2::before{
+  content: '';
+  position: absolute;
+  left: 16px;
+  bottom: 0;
+  height: 3px;
+  width: 245px;
+  border-radius: 12px;
+  background: #4070f4;
+}
+.wrapper form{
+  margin-top: 30px;
+}
+.wrapper form .input-box{
+  height: 52px;
+  margin: 18px 0;
+}
+form .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 32px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.input-box input:focus,
+.input-box input:valid{
+  border-color: #4070f4;
+}
+form .policy{
+  display: flex;
+  align-items: center;
+}
+form h3{
+  color: #707070;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.input-box.button input{
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  background: #4070f4;
+  cursor: pointer;
+  margin-bottom: 0
+}
+.input-box.button input:hover{
+  background: #0e4bf1;
+}
+form .text h3{
+ color: #333;
+ width: 100%;
+ text-align: center;
+}
+form .text h3 a{
+  color: #4070f4;
+  text-decoration: none;
+}
+form .text h3 a:hover{
+  text-decoration: underline;
+}
+
