@@ -13,8 +13,16 @@ import { CiCircleList } from "react-icons/ci";
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
+
+
+
+
 const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState(null);
+
 
   const handleMenuClick = (item) => {
     setSelectedItem(item);
@@ -174,11 +182,43 @@ const Dashboard = () => {
             </div>
           )}
 
+
           {selectedItem === 'Manage Restaurant' && (
-            <div>
-              
-            </div>
+           <Form className="update-details">
+
+           <h2 className="detail-heading">Update Restaurant Details</h2>
+     
+           <Form.Group className="detail" controlId="restaurantName">
+             <Form.Label>Restaurant Name</Form.Label>
+             <Form.Control placeholder="Abcd" />
+           </Form.Group>
+     
+           <Form.Group className="detail" controlId="aboutRestaurant">
+             <Form.Label>About Restaurant</Form.Label>
+             <Form.Control as="textarea" rows={3} placeholder="Describe your restaurant..." />
+           </Form.Group>
+     
+           <Form.Group className="detail" controlId="location">
+             <Form.Label>Location</Form.Label>
+             <Form.Control placeholder="India" />
+           </Form.Group>
+     
+           <Form.Group className="detail" controlId="site">
+             <Form.Label>Site</Form.Label>
+             <Form.Control placeholder="https://www.xyz.com" />
+           </Form.Group>
+     
+           <Form.Group className="detail-2" controlId="menuImage">
+             <Form.Label>Menus</Form.Label>
+             <Form.Control type="file" accept="image/*" />
+           </Form.Group>
+     
+           <Button variant="primary" type="submit" className='details'>
+             Add Restaurant Details
+           </Button>
+         </Form>
           )}
+
           {selectedItem === 'Your Playlist' && (
             <div>
               <h3>Your Playlist Details</h3>
@@ -192,7 +232,7 @@ const Dashboard = () => {
               <p>Check recent notifications related to your restaurants.</p>
             </div>
           )}
-
+         
 
         </div>
       </div>
