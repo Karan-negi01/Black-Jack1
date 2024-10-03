@@ -82,7 +82,7 @@ const Dashboard = () => {
     <div>
       <div className="dashboard">
         <div className="left_dashboard">
-          <img className='logo' src={logo} />
+          <img className='logo' src={logo} alt='logo' />
           <div className="dashboard-menu">
             <div className="dropdown-menu">
               <TfiDashboard className='menu-icons' />
