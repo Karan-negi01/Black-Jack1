@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
 import logo from '../assests/jack.png';
-import { TfiDashboard } from "react-icons/tfi";
+import { RxDashboard } from "react-icons/rx";
+import { IoMdCheckboxOutline } from "react-icons/io";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { RiPlayList2Line } from "react-icons/ri";
 import { MdOutlineFeaturedPlayList } from "react-icons/md";
@@ -78,7 +79,7 @@ const Dashboard = () => {
         <img className='logo' src={logo} alt='logo' />
         <div className="dashboard-menu">
           <div className="dropdown-menu" onClick={() => handleMenuClick('Dashboard')}>
-            <TfiDashboard className='menu-icons' />
+            <RxDashboard className='menu-icons' />
             <p className='dashboard-menu-box'>Dashboard</p>
           </div>
           <div className="dropdown-menu" onClick={() => handleMenuClick('Add Your Restaurant')}>
@@ -86,7 +87,7 @@ const Dashboard = () => {
             <p className='dashboard-menu-box'>Add Your Restaurant</p>
           </div>
           <div className="dropdown-menu" onClick={() => handleMenuClick('Manage Restaurant')}>
-            <IoFastFoodOutline className='menu-icons' />
+            <IoMdCheckboxOutline  className='menu-icons' />
             <p className='dashboard-menu-box'>Manage Restaurant</p>
           </div>
           <div className="dropdown-menu" onClick={() => handleMenuClick('Your Playlist')}>
@@ -112,8 +113,10 @@ const Dashboard = () => {
         <div className="right-header">
           <div className="left-part">
             <div className="header-box">
-              <p className='header-dashboard'>Dashboard</p>
-              <p className='header-settings'>Settings</p>
+              
+              <p className='header-dashboard'>Profile</p>
+              <p className='header-dashboard'>Settings</p>
+              
             </div>
           </div>
           <div className="right-part">
