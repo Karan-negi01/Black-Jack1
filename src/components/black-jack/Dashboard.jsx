@@ -18,6 +18,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import menu from '../assests/menu.png'
 import { MdAddToPhotos } from "react-icons/md";
+import caraousel from '../assests/caraousel.png'
 
 
 
@@ -251,6 +252,13 @@ const Dashboard = () => {
 
                     <p className='restro-menu-heading'>Caraousel</p>
                     <MdAddToPhotos className='restro-menu-icons' />
+                  </div>
+                  <div className="restro-menu-box">
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    
                   </div>
                 </div>
               </div>

@@ -27,11 +27,13 @@
 
 .dashboard-menu {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 40px;
     height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+   
+    padding-left: 10px;
 
 }
 
@@ -98,11 +100,12 @@
 .header-dashboard {
     width: 40%;
     height: auto;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.2s;
     text-align: center;
     margin-right: 30px;
+    
 
 }
 
@@ -460,7 +463,7 @@ form .text h3 a:hover {
 .restro-menu{
     width: 100%;
     height: 45vh;
-    border-bottom:  2px solid green;
+    border-bottom:  2px solid #C7BEBE;
     display: flex;
     flex-direction: column;
     
@@ -478,23 +481,28 @@ form .text h3 a:hover {
 .restro-menu-heading{
     font-size: 24px;
     padding: 10px;
+    cursor: pointer;
   
   
 }
 .restro-menu-icons{
     width: 15%;
-
+    transition: 0.3s ease;
     font-size: 28px;
     text-align: center;
     align-content: center;
     cursor: pointer;
 }
-
+.restro-menu-icons:hover{
+    transform: scale(1.1);
+}
 
 
 .restro-caraousel{
     width: 100%;
     height: 45vh;
+    display: flex;
+    flex-direction: column;
    
     
 }
@@ -513,4 +521,12 @@ form .text h3 a:hover {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+.caraousel-image{
+    width: 23%;
+    height: 25vh;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
 }
