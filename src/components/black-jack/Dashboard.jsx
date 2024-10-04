@@ -25,7 +25,7 @@ import { MdAddToPhotos } from "react-icons/md";
 
 const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState('Dashboard');
-  const [isOpen, setIsOpen] = useState(false);
+  
 
 
 
