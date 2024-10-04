@@ -16,6 +16,7 @@ import 'chart.js/auto';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import menu from '../assests/menu.png'
 
 
 
@@ -23,7 +24,11 @@ import Form from 'react-bootstrap/Form';
 
 const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState('Dashboard');
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleMenuClick = (item) => {
     setSelectedItem(item);
@@ -78,31 +83,31 @@ const Dashboard = () => {
       <div className="left_dashboard">
         <img className='logo' src={logo} alt='logo' />
         <div className="dashboard-menu">
-          <div className="dropdown-menu" onClick={() => handleMenuClick('Dashboard')}>
+          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Dashboard')}>
             <RxDashboard className='menu-icons' />
             <p className='dashboard-menu-box'>Dashboard</p>
           </div>
-          <div className="dropdown-menu" onClick={() => handleMenuClick('Add Your Restaurant')}>
+          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Add Your Restaurant')}>
             <IoFastFoodOutline className='menu-icons' />
             <p className='dashboard-menu-box'>Add Your Restaurant</p>
           </div>
-          <div className="dropdown-menu" onClick={() => handleMenuClick('Manage Restaurant')}>
+          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Manage Restaurant')}>
             <IoMdCheckboxOutline className='menu-icons' />
             <p className='dashboard-menu-box'>Manage Restaurant</p>
           </div>
-          <div className="dropdown-menu" onClick={() => handleMenuClick('Your Playlist')}>
+          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Your Playlist')}>
             <RiPlayList2Line className='menu-icons' />
             <p className='dashboard-menu-box'>Your Playlist</p>
           </div>
-          <div className="dropdown-menu" onClick={() => handleMenuClick('Portfolio')}>
+          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Portfolio')}>
             <MdOutlineFeaturedPlayList className='menu-icons' />
             <p className='dashboard-menu-box'>Portfolio</p>
           </div>
-          <div className="dropdown-menu" onClick={() => handleMenuClick('Recent Activity')}>
+          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Recent Activity')}>
             <FiActivity className='menu-icons' />
             <p className='dashboard-menu-box'>Recent Activity</p>
           </div>
-          <div className="dropdown-menu" onClick={() => handleMenuClick('Notifications')}>
+          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Notifications')}>
             <IoMdNotificationsOutline className='menu-icons' />
             <p className='dashboard-menu-box'>Notifications</p>
           </div>
@@ -219,7 +224,7 @@ const Dashboard = () => {
                 <Form.Control type="file" accept="image/*" />
               </Form.Group>
 
-              <Button variant="primary" type="submit" className='details'>
+              <Button variant="primary" type="submit" className='update-form-button'>
                 Add Restaurant Details
               </Button>
             </Form>
@@ -227,8 +232,21 @@ const Dashboard = () => {
 
           {selectedItem === 'Your Playlist' && (
             <div>
-              <h3>Your Playlist Details</h3>
-              <p>Manage your playlists and see the content being played.</p>
+              <div className="playlist-container">
+                <div className="restro-menu">
+                  <p className='restro-menu-heading'>Menus</p>
+                  <div className="restro-menu-box">
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                  </div>
+                </div>
+                <div className="restro-caraousel">
+                  <p className='restro-menu-heading'>Caraousel</p>
+                </div>
+              </div>
             </div>
           )}
 
