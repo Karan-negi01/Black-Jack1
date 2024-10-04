@@ -22,7 +22,7 @@ import Form from 'react-bootstrap/Form';
 
 
 const Dashboard = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState('Dashboard');
 
 
   const handleMenuClick = (item) => {
@@ -87,7 +87,7 @@ const Dashboard = () => {
             <p className='dashboard-menu-box'>Add Your Restaurant</p>
           </div>
           <div className="dropdown-menu" onClick={() => handleMenuClick('Manage Restaurant')}>
-            <IoMdCheckboxOutline  className='menu-icons' />
+            <IoMdCheckboxOutline className='menu-icons' />
             <p className='dashboard-menu-box'>Manage Restaurant</p>
           </div>
           <div className="dropdown-menu" onClick={() => handleMenuClick('Your Playlist')}>
@@ -113,10 +113,10 @@ const Dashboard = () => {
         <div className="right-header">
           <div className="left-part">
             <div className="header-box">
-              
+
               <p className='header-dashboard'>Profile</p>
               <p className='header-dashboard'>Settings</p>
-              
+
             </div>
           </div>
           <div className="right-part">
@@ -130,21 +130,24 @@ const Dashboard = () => {
         <div className="right-box">
           {selectedItem === 'Dashboard' && (
             <>
-              <div className="box1">
-                <p className='box-number'>0 (48.2%)</p>
-                <p className='box-text'>Total Restaurants</p>
-              </div>
-              <div className="box2">
-                <p className='box-number'>0</p>
-                <p className='box-text'>Total Screens</p>
-              </div>
-              <div className="box3">
-                <p className='box-number'>0</p>
-                <p className='box-text'>Active Screens</p>
-              </div>
-              <div className="box4">
-                <p className='box-number'>0</p>
-                <p className='box-text'>Total Menus</p>
+              <div className="dashboard-boxes">
+
+                <div className="box1">
+                  <p className='box-number'>0 (48.2%)</p>
+                  <p className='box-text'>Total Restaurants</p>
+                </div>
+                <div className="box2">
+                  <p className='box-number'>0</p>
+                  <p className='box-text'>Total Screens</p>
+                </div>
+                <div className="box3">
+                  <p className='box-number'>0</p>
+                  <p className='box-text'>Active Screens</p>
+                </div>
+                <div className="box4">
+                  <p className='box-number'>0</p>
+                  <p className='box-text'>Total Menus</p>
+                </div>
               </div>
               <div className="chart-container">
                 <div className="chart-header">
@@ -158,7 +161,7 @@ const Dashboard = () => {
                     <button>Year</button>
                   </div>
                 </div>
-                <Line data={data} options={options} height={430} />
+                <Line data={data} options={options} height={420} />
               </div>
             </>
           )}
@@ -187,39 +190,39 @@ const Dashboard = () => {
 
 
           {selectedItem === 'Manage Restaurant' && (
-           <Form className="update-details">
+            <Form className="update-form">
 
-           <h2 className="detail-heading">Update Restaurant Details</h2>
-     
-           <Form.Group className="detail" controlId="restaurantName">
-             <Form.Label>Restaurant Name</Form.Label>
-             <Form.Control placeholder="Abcd" />
-           </Form.Group>
-     
-           <Form.Group className="detail" controlId="aboutRestaurant">
-             <Form.Label>About Restaurant</Form.Label>
-             <Form.Control as="textarea" rows={3} placeholder="Describe your restaurant..." />
-           </Form.Group>
-     
-           <Form.Group className="detail" controlId="location">
-             <Form.Label>Location</Form.Label>
-             <Form.Control placeholder="India" />
-           </Form.Group>
-     
-           <Form.Group className="detail" controlId="site">
-             <Form.Label>Site</Form.Label>
-             <Form.Control placeholder="https://www.xyz.com" />
-           </Form.Group>
-     
-           <Form.Group className="detail-2" controlId="menuImage">
-             <Form.Label>Menus</Form.Label>
-             <Form.Control type="file" accept="image/*" />
-           </Form.Group>
-     
-           <Button variant="primary" type="submit" className='details'>
-             Add Restaurant Details
-           </Button>
-         </Form>
+              <h2 className="update-form-heading">Update Restaurant Details</h2>
+
+              <Form.Group className="detail" controlId="restaurantName">
+                <Form.Label>Restaurant Name</Form.Label>
+                <Form.Control placeholder="Abcd" />
+              </Form.Group>
+
+              <Form.Group className="detail" controlId="aboutRestaurant">
+                <Form.Label>About Restaurant</Form.Label>
+                <Form.Control as="textarea" rows={3} placeholder="Describe your restaurant..." />
+              </Form.Group>
+
+              <Form.Group className="detail" controlId="location">
+                <Form.Label>Location</Form.Label>
+                <Form.Control placeholder="India" />
+              </Form.Group>
+
+              <Form.Group className="detail" controlId="site">
+                <Form.Label>Site</Form.Label>
+                <Form.Control placeholder="https://www.xyz.com" />
+              </Form.Group>
+
+              <Form.Group className="detail-2" controlId="menuImage">
+                <Form.Label>Menus</Form.Label>
+                <Form.Control type="file" accept="image/*" />
+              </Form.Group>
+
+              <Button variant="primary" type="submit" className='details'>
+                Add Restaurant Details
+              </Button>
+            </Form>
           )}
 
           {selectedItem === 'Your Playlist' && (
@@ -235,7 +238,7 @@ const Dashboard = () => {
               <p>Check recent notifications related to your restaurants.</p>
             </div>
           )}
-         
+
 
         </div>
       </div>
