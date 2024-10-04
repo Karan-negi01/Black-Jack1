@@ -27,9 +27,7 @@ const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState('Dashboard');
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+
 
   const handleMenuClick = (item) => {
     setSelectedItem(item);
