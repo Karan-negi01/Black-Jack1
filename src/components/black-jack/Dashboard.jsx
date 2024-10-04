@@ -17,6 +17,7 @@ import 'chart.js/auto';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import menu from '../assests/menu.png'
+import { MdAddToPhotos } from "react-icons/md";
 
 
 
@@ -234,7 +235,11 @@ const Dashboard = () => {
             <div>
               <div className="playlist-container">
                 <div className="restro-menu">
-                  <p className='restro-menu-heading'>Menus</p>
+                  <div className="restro-menu-header">
+
+                    <p className='restro-menu-heading'>Menus</p>
+                    <MdAddToPhotos className='restro-menu-icons' />
+                  </div>
                   <div className="restro-menu-box">
                     <img src={menu} className='menu-image' alt='menu'></img>
                     <img src={menu} className='menu-image' alt='menu'></img>
@@ -244,7 +249,11 @@ const Dashboard = () => {
                   </div>
                 </div>
                 <div className="restro-caraousel">
-                  <p className='restro-menu-heading'>Caraousel</p>
+                  <div className="restro-menu-header">
+
+                    <p className='restro-menu-heading'>Caraousel</p>
+                    <MdAddToPhotos className='restro-menu-icons' />
+                  </div>
                 </div>
               </div>
             </div>
