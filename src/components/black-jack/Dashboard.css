@@ -52,6 +52,8 @@
     display: flex;  
     flex-wrap: wrap;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 
 }
 .sidebar-items li:hover{
@@ -73,13 +75,13 @@
     
 }
 .sub-menu{
-    display: flex;
-    flex-direction: column;
+    
     transition: 0.5s ease;
     margin-left: 64px;
     
     height: 0;
     opacity: 0;
+    
     
     width: 100%;
 }
@@ -98,7 +100,8 @@
 
  .sub-menu.show{
     height: 100px;
-   
+    display: flex;
+    flex-direction: column;
     opacity: 1;
   }
 .right_dashboard {
