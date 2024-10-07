@@ -108,8 +108,8 @@ const Dashboard = () => {
             <div className={`sub-menu ${openSubMenu === 1 ? 'show' : ''}`}>
 
 
-              <p onClick={()=>handleMenuClick('Your Playlist')}>Menus</p>
-              <p onClick={()=>handleMenuClick('Your Playlist')}>Caraousel</p>
+              <p onClick={()=>handleMenuClick('Menus')}>Menus</p>
+              <p onClick={()=>handleMenuClick('Caraousel')}>Caraousel</p>
 
             </div>
 
@@ -236,7 +236,7 @@ const Dashboard = () => {
             </Form>
           )}
 
-          {selectedItem === 'Your Playlist' && (
+          {selectedItem === 'Menu' && (
             <div>
               <div className="playlist-container">
                 <div className="restro-menu">
