@@ -236,7 +236,7 @@ const Dashboard = () => {
             </Form>
           )}
 
-          {selectedItem === 'Menu' && (
+          {selectedItem === 'Menus' && (
             <div>
               <div className="playlist-container">
                 <div className="restro-menu">
