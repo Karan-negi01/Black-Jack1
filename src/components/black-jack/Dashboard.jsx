@@ -26,8 +26,24 @@ import caraousel from '../assests/caraousel.png'
 
 const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState('Dashboard');
-  
 
+  const [openSubMenu, setOpenSubMenu] = useState(null); // To track which submenu is open
+
+
+
+  const toggleSubMenu = (index) => {
+    // If the clicked submenu is already open, close it
+    if (openSubMenu === index) {
+      setOpenSubMenu(null);
+    } else {
+      closeAllSubMenus();
+      setOpenSubMenu(index);
+    }
+  };
+
+  const closeAllSubMenus = () => {
+    setOpenSubMenu(null);
+  };
 
 
   const handleMenuClick = (item) => {
@@ -82,35 +98,25 @@ const Dashboard = () => {
     <div className="dashboard">
       <div className="left_dashboard">
         <img className='logo' src={logo} alt='logo' />
-        <div className="dashboard-menu">
-          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Dashboard')}>
-            <RxDashboard className='menu-icons' />
-            <p className='dashboard-menu-box'>Dashboard</p>
-          </div>
-          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Add Your Restaurant')}>
-            <IoFastFoodOutline className='menu-icons' />
-            <p className='dashboard-menu-box'>Add Your Restaurant</p>
-          </div>
-          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Manage Restaurant')}>
-            <IoMdCheckboxOutline className='menu-icons' />
-            <p className='dashboard-menu-box'>Manage Restaurant</p>
-          </div>
-          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Your Playlist')}>
-            <RiPlayList2Line className='menu-icons' />
-            <p className='dashboard-menu-box'>Your Playlist</p>
-          </div>
-          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Portfolio')}>
-            <MdOutlineFeaturedPlayList className='menu-icons' />
-            <p className='dashboard-menu-box'>Portfolio</p>
-          </div>
-          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Recent Activity')}>
-            <FiActivity className='menu-icons' />
-            <p className='dashboard-menu-box'>Recent Activity</p>
-          </div>
-          <div className="dashboard-menu-box" onClick={() => handleMenuClick('Notifications')}>
-            <IoMdNotificationsOutline className='menu-icons' />
-            <p className='dashboard-menu-box'>Notifications</p>
-          </div>
+        <div className="dashboard-sidebar">
+          <ul className='sidebar-items'>
+            <li onClick={()=>handleMenuClick('Dashboard')}><RxDashboard className='sidebar-icons' /><p className='sidebar-heading'>Dashboard</p></li>
+            <li onClick={()=>handleMenuClick( 'Add Your Restaurant')}><IoMdCheckboxOutline className='sidebar-icons' /><p className='sidebar-heading'>Add Your Restaurant</p></li>
+            <li onClick={()=>handleMenuClick('Manage Restaurant')}><IoFastFoodOutline className='sidebar-icons' /><p className='sidebar-heading'>Manage Restaurant</p></li>
+            <li onClick={() => toggleSubMenu(1)}><RiPlayList2Line className='sidebar-icons' /><p className='sidebar-heading'>Your Playlist</p>
+            </li>
+            <div className={`sub-menu ${openSubMenu === 1 ? 'show' : ''}`}>
+
+
+              <p onClick={()=>handleMenuClick('Your Playlist')}>Menus</p>
+              <p onClick={()=>handleMenuClick('Your Playlist')}>Caraousel</p>
+
+            </div>
+
+            <li onClick={()=>handleMenuClick('Portfolio')}><MdOutlineFeaturedPlayList className='sidebar-icons' /><p className='sidebar-heading'>Portfolio</p></li>
+            <li onClick={()=>handleMenuClick('Recent Activity')}><FiActivity className='sidebar-icons' /><p className='sidebar-heading'>Recent Activity</p></li>
+            <li onClick={()=>handleMenuClick('Notification')}><IoMdNotificationsOutline className='sidebar-icons' /><p className='sidebar-heading'>Notifiation</p></li>
+          </ul>
         </div>
       </div>
 
@@ -258,7 +264,7 @@ const Dashboard = () => {
                     <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
                     <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
                     <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
-                    
+
                   </div>
                 </div>
               </div>
