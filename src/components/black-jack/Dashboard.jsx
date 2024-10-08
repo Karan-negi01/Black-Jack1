@@ -100,22 +100,22 @@ const Dashboard = () => {
         <img className='logo' src={logo} alt='logo' />
         <div className="dashboard-sidebar">
           <ul className='sidebar-items'>
-            <li onClick={()=>handleMenuClick('Dashboard')}><RxDashboard className='sidebar-icons' /><p className='sidebar-heading'>Dashboard</p></li>
-            <li onClick={()=>handleMenuClick( 'Add Your Restaurant')}><IoMdCheckboxOutline className='sidebar-icons' /><p className='sidebar-heading'>Add Your Restaurant</p></li>
-            <li onClick={()=>handleMenuClick('Manage Restaurant')}><IoFastFoodOutline className='sidebar-icons' /><p className='sidebar-heading'>Manage Restaurant</p></li>
+            <li onClick={() => handleMenuClick('Dashboard')}><RxDashboard className='sidebar-icons' /><p className='sidebar-heading'>Dashboard</p></li>
+            <li onClick={() => handleMenuClick('Add Your Restaurant')}><IoMdCheckboxOutline className='sidebar-icons' /><p className='sidebar-heading'>Add Your Restaurant</p></li>
+            <li onClick={() => handleMenuClick('Manage Restaurant')}><IoFastFoodOutline className='sidebar-icons' /><p className='sidebar-heading'>Manage Restaurant</p></li>
             <li onClick={() => toggleSubMenu(1)}><RiPlayList2Line className='sidebar-icons' /><p className='sidebar-heading'>Your Playlist</p>
             </li>
             <div className={`sub-menu ${openSubMenu === 1 ? 'show' : ''}`}>
 
 
-              <p onClick={()=>handleMenuClick('Menus')}>Menus</p>
-              <p onClick={()=>handleMenuClick('Caraousel')}>Caraousel</p>
+              <p onClick={() => handleMenuClick('Menus')}>Menus</p>
+              <p onClick={() => handleMenuClick('Caraousel')}>Caraousel</p>
 
             </div>
 
-            <li onClick={()=>handleMenuClick('Portfolio')}><MdOutlineFeaturedPlayList className='sidebar-icons' /><p className='sidebar-heading'>Portfolio</p></li>
-            <li onClick={()=>handleMenuClick('Recent Activity')}><FiActivity className='sidebar-icons' /><p className='sidebar-heading'>Recent Activity</p></li>
-            <li onClick={()=>handleMenuClick('Notification')}><IoMdNotificationsOutline className='sidebar-icons' /><p className='sidebar-heading'>Notifiation</p></li>
+            <li onClick={() => handleMenuClick('Portfolio')}><MdOutlineFeaturedPlayList className='sidebar-icons' /><p className='sidebar-heading'>Portfolio</p></li>
+            <li onClick={() => handleMenuClick('Recent Activity')}><FiActivity className='sidebar-icons' /><p className='sidebar-heading'>Recent Activity</p></li>
+            <li onClick={() => handleMenuClick('Notifications')}><IoMdNotificationsOutline className='sidebar-icons' /><p className='sidebar-heading'>Notifiations</p></li>
           </ul>
         </div>
       </div>
@@ -239,35 +239,97 @@ const Dashboard = () => {
           {selectedItem === 'Menus' && (
             <div>
               <div className="playlist-container">
-                <div className="restro-menu">
-                  <div className="restro-menu-header">
 
-                    <p className='restro-menu-heading'>Menus</p>
-                    <MdAddToPhotos className='restro-menu-icons' />
-                  </div>
-                  <div className="restro-menu-box">
-                    <img src={menu} className='menu-image' alt='menu'></img>
-                    <img src={menu} className='menu-image' alt='menu'></img>
-                    <img src={menu} className='menu-image' alt='menu'></img>
-                    <img src={menu} className='menu-image' alt='menu'></img>
-                    <img src={menu} className='menu-image' alt='menu'></img>
-                  </div>
+                <div className="restro-menu-header">
+
+                  <p className='restro-menu-heading'>Menus</p>
+                  <MdAddToPhotos className='restro-menu-icons' />
                 </div>
-                <div className="restro-caraousel">
-                  <div className="restro-menu-header">
-
-                    <p className='restro-menu-heading'>Caraousel</p>
-                    <MdAddToPhotos className='restro-menu-icons' />
-                  </div>
-                  <div className="restro-menu-box">
-                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
-                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
-                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
-                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
-
-                  </div>
+                <div className="restro-menu-box">
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
+                  <img src={menu} className='menu-image' alt='menu'></img>
                 </div>
+
+
               </div>
+            </div>
+          )}
+
+          {selectedItem === 'Caraousel' && (
+            <div>
+              <div className="playlist-container">
+
+                <div className="restro-menu-header">
+
+                  <p className='restro-menu-heading'>Caraousel</p>
+                  <MdAddToPhotos className='restro-menu-icons' />
+                </div>
+                <div className="restro-menu-box">
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                </div>
+
+
+
+
+
+
+              </div>
+            </div>
+          )}
+
+
+          {selectedItem === 'Portfolio' && (
+            <div>
+              <h3>Portfolio</h3>
+              <p>Check Number of screens of your restaurants.</p>
+            </div>
+          )}
+          {selectedItem === 'Recent Activity' && (
+            <div>
+              <h3>Recent Activity</h3>
+              <p>Check recent Activity related to your restaurants.</p>
             </div>
           )}
 
