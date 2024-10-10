@@ -13,19 +13,42 @@ import { BsBrightnessHigh } from "react-icons/bs";
 import { CiCircleList } from "react-icons/ci";
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
-
+import { BiFoodMenu } from "react-icons/bi";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import menu from '../assests/menu.png'
 import { MdAddToPhotos } from "react-icons/md";
 import caraousel from '../assests/caraousel.png'
-import axios from 'axios';
+import { MdOutlineOndemandVideo } from "react-icons/md";
+import { GoRepoTemplate } from "react-icons/go";
 
 
+
+
+
+
+
+// const [openSubMenu, setOpenSubMenu] = useState(null); // To track which submenu is open
+
+
+
+// const toggleSubMenu = (index) => {
+//   // If the clicked submenu is already open, close it
+//   if (openSubMenu === index) {
+//     setOpenSubMenu(null);
+//   } else {
+//     closeAllSubMenus();
+//     setOpenSubMenu(index);
+//   }
+// };
+
+// const closeAllSubMenus = () => {
+//   setOpenSubMenu(null);
+// };
 
 
 const Dashboard = () => {
-
+  const [selectedItem, setSelectedItem] = useState('Dashboard');
 
   const [restaurantDetails, setRestaurantDetails] = useState({
     name: '',
@@ -41,50 +64,37 @@ const Dashboard = () => {
     setRestaurantDetails({ ...restaurantDetails, [name]: value });
   };
 
+
+
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzA0ZmZjYTMyNWZjMjhiNzQ3M2E5NmIiLCJpYXQiOjE3MjgzODEzNzR9.6GyQCpxiKzrER0o46qhSIAIiJWYByaLKCkyPWIvjmdc';
-
-      const response = await axios.post('https://tv-app-cloud-backend.onrender.com/restaurant/add', restaurantDetails,
-        {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-          }
+      const response = await axios.post('https://tv-app-cloud-backend.onrender.com/restaurant/add', restaurantDetails, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
         }
-      );
-      console.log(response.data);
-      setSuccessMessage('Success fgg');
+      });
+      console.log("API response:", response);
 
-
-
+      if (response.status === 200) {
+        setSuccessMessage('Restaurant added successfully!');
+        setSuccessMessage('');
+        setRestaurantDetails({ name: '', email: '', password: '' }); // Clear form
+      }
     } catch (error) {
       setErrorMessage('Failed to add restaurant. Please try again.');
-      
+      setErrorMessage('');
       console.log("failed")
     }
   };
 
-  const [selectedItem, setSelectedItem] = useState('Dashboard');
-
-  const [openSubMenu, setOpenSubMenu] = useState(null); // To track which submenu is open
 
 
 
-  const toggleSubMenu = (index) => {
-    // If the clicked submenu is already open, close it
-    if (openSubMenu === index) {
-      setOpenSubMenu(null);
-    } else {
-      closeAllSubMenus();
-      setOpenSubMenu(index);
-    }
-  };
 
-  const closeAllSubMenus = () => {
-    setOpenSubMenu(null);
-  };
 
 
   const handleMenuClick = (item) => {
@@ -140,24 +150,42 @@ const Dashboard = () => {
       <div className="left_dashboard">
         <img className='logo' src={logo} alt='logo' />
         <div className="dashboard-sidebar">
-          <ul className='sidebar-items'>
-            <li onClick={() => handleMenuClick('Dashboard')}><RxDashboard className='sidebar-icons' /><p className='sidebar-heading'>Dashboard</p></li>
-            <li onClick={() => handleMenuClick('Add Your Restaurant')}><IoMdCheckboxOutline className='sidebar-icons' /><p className='sidebar-heading'>Add Your Restaurant</p></li>
-            <li onClick={() => handleMenuClick('Manage Restaurant')}><IoFastFoodOutline className='sidebar-icons' /><p className='sidebar-heading'>Manage Restaurant</p></li>
-            <li onClick={() => toggleSubMenu(1)}><RiPlayList2Line className='sidebar-icons' /><p className='sidebar-heading'>Your Playlist</p>
-            </li>
-            <div className={`sub-menu ${openSubMenu === 1 ? 'show' : ''}`}>
-
-
-              <p onClick={() => handleMenuClick('Menus')}>Menus</p>
-              <p onClick={() => handleMenuClick('Caraousel')}>Caraousel</p>
-
-            </div>
-
-            <li onClick={() => handleMenuClick('Portfolio')}><MdOutlineFeaturedPlayList className='sidebar-icons' /><p className='sidebar-heading'>Portfolio</p></li>
-            <li onClick={() => handleMenuClick('Recent Activity')}><FiActivity className='sidebar-icons' /><p className='sidebar-heading'>Recent Activity</p></li>
-            <li onClick={() => handleMenuClick('Notifications')}><IoMdNotificationsOutline className='sidebar-icons' /><p className='sidebar-heading'>Notifiations</p></li>
-          </ul>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Dashboard')}>
+            <RxDashboard className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Dashboard</p>
+          </div>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Add Your Restaurant')}>
+            <IoFastFoodOutline className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Add Your Restaurant</p>
+          </div>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Manage Restaurant')}>
+            <IoMdCheckboxOutline className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Manage Restaurant</p>
+          </div>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Menus')}>
+            <BiFoodMenu className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Menus</p>
+          </div>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Caraousel')}>
+            <MdOutlineOndemandVideo className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Caraousel</p>
+          </div>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Template')}>
+            <GoRepoTemplate className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Templates</p>
+          </div>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Portfolio')}>
+            <MdOutlineFeaturedPlayList className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Portfolio</p>
+          </div>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Recent Activity')}>
+            <FiActivity className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Recent Activity</p>
+          </div>
+          <div className="dashboard-sidebar-box" onClick={() => handleMenuClick('Notifications')}>
+            <IoMdNotificationsOutline className='sidebar-icons' />
+            <p className='dashboard-sidebar-box'>Notifications</p>
+          </div>
         </div>
       </div>
 
@@ -290,54 +318,49 @@ const Dashboard = () => {
                 <Form.Control placeholder="https://www.xyz.com" />
               </Form.Group>
 
-              <Form.Group className="detail-2" controlId="menuImage">
-                <Form.Label>Menus</Form.Label>
-                <Form.Control type="file" accept="image/*" />
-              </Form.Group>
-
+          
               <Button variant="primary" type="submit" className='update-form-button'>
                 Add Restaurant Details
               </Button>
             </Form>
           )}
 
+
           {selectedItem === 'Menus' && (
-            <div>
-              <div className="playlist-container">
+            <div className="playlist-container">
 
-                <div className="restro-menu-header">
+              <div className="restro-menu-header">
 
-                  <p className='restro-menu-heading'>Menus</p>
-                  <MdAddToPhotos className='restro-menu-icons' />
-                </div>
-                <div className="restro-menu-box">
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                  <img src={menu} className='menu-image' alt='menu'></img>
-                </div>
-
-
+                <p className='restro-menu-heading'>Menus</p>
+                <MdAddToPhotos className='restro-menu-icons' />
+              </div>
+              <div className="restro-menu-box">
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
+                <img src={menu} className='menu-image' alt='menu'></img>
               </div>
             </div>
+
           )}
+
 
           {selectedItem === 'Caraousel' && (
             <div>
@@ -384,19 +407,6 @@ const Dashboard = () => {
             </div>
           )}
 
-
-          {selectedItem === 'Portfolio' && (
-            <div>
-              <h3>Portfolio</h3>
-              <p>Check Number of screens of your restaurants.</p>
-            </div>
-          )}
-          {selectedItem === 'Recent Activity' && (
-            <div>
-              <h3>Recent Activity</h3>
-              <p>Check recent Activity related to your restaurants.</p>
-            </div>
-          )}
 
           {selectedItem === 'Notifications' && (
             <div>
