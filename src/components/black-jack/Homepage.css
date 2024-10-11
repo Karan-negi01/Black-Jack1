@@ -63,7 +63,7 @@
 
 .right_dashboard {
     width: 83%;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 
     height: auto;
     padding: 10px;
@@ -131,18 +131,19 @@
     width: 100%;
     height: 90vh;
     /* border: 2px solid red; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 
 .dashboard-boxes {
     width: 100%;
-    height: 24vh;
+    height: 20vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
+   
 
 
 }
@@ -152,7 +153,7 @@
 .box3,
 .box4 {
     width: 23%;
-    height: 23vh;
+    height: 20vh;
     background: #5856D6;
     border-radius: 10px;
     padding: 20px;
@@ -171,11 +172,13 @@
 
 .box-number {
     font-size: 28px;
-    margin-bottom: 10px;
+   margin-top: 15px;
+   margin-bottom: 10px;
 }
 
 .box-text {
     font-size: 18px;
+    
 }
 
 .box2 {
@@ -191,25 +194,27 @@
 }
 
 .chart-container {
-    width: 97%;
-    height: 52vh;
+    width: 95%;
+    height: 60vh;
     border-radius: 5px;
-    margin-top: 20px;
+   overflow: hidden;
     padding: 15px;
     margin: auto;
     border: 1px solid rgba(128, 128, 128, 0.499);
     background-color: #fff;
-    /* Ensure the chart background stands out */
+    
 }
 
 .chart-header {
     display: flex;
     justify-content: space-between;
+
 }
 
 .chart-heading {
     text-align: left;
     margin-left: 5px;
+   
 
 }
 
@@ -360,6 +365,17 @@ form .text h3 a {
 form .text h3 a:hover {
     text-decoration: underline;
 }
+.success-message{
+    color: rgb(3, 187, 3);
+
+    text-align: center;
+}
+.error-message{
+    color: rgb(248, 12, 12);
+   
+    
+    text-align: center;
+}
 
 
 
@@ -426,6 +442,7 @@ form .text h3 a:hover {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
+    cursor: pointer;
     
 }
 

@@ -1,4 +1,8 @@
-import Dashboard from "./components/black-jack/Dashboard";
+import Homepage from "./components/black-jack/Homepage";
+
+import { BrowserRouter as Router} from 'react-router-dom';
+
+
 
 
 
@@ -8,9 +12,12 @@ import Dashboard from "./components/black-jack/Dashboard";
 
 function App() {
   return (
-    <Dashboard/>
-    
+    <>
+   <Router>
+    <Homepage/>
+   </Router>
    
+   </>
   );
 }
 
