@@ -6,10 +6,10 @@ const Restaurant = () => {
     const navigate = useNavigate();
     const handlemanage = ()=>{
         navigate('/Managerestaurant')
-    }
+    };
     const handlescreen = ()=>{
         navigate('/Screen')
-    }
+    };
     
   return (
     <div>

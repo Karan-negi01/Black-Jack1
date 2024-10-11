@@ -13,7 +13,7 @@ const Managerestaurant = () => {
     const navigate = useNavigate();
     const handledetails =()=>{
         navigate('/Restaurant')
-    }
+    };
     return (
         <div>
             <Form className="update-form">

@@ -5,13 +5,60 @@
 }
 .street-container{
     width: 100%;
-    height: 60vh;
+    height: 90vh;
     border: 2px solid red;
     display: flex;
     flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+    overflow-y: scroll;
+    
+    
     
 }
 .screen-box{
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(128, 128, 128, 0.499);
+    width: 26%;
+    height: 34vh;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 30px;
+}
+
+.screen-text{
+    width: 100%;
+    height: 22vh;
+    align-content: flex-end;
+    color: #fff;
+    background: rgb(128, 128, 128);
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.screen-buttons{
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid blue; */
+    margin-top: 25px;
+}
+.screen-buttons button{
+    border: none;
+    outline: none;
+    width: 44%;
+    height: 6vh;
+    
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 500;
+}
+.restrict{
+    background: red;
+}
+.Manage{
+    background: #3399FF;
 }
