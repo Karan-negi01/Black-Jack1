@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import caraousel from '../assests/caraousel.png'
 import { MdAddToPhotos } from "react-icons/md";
 

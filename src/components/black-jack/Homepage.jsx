@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Homepage.css';
 import logo from '../assests/jack.png';
 import { RxDashboard } from "react-icons/rx";
