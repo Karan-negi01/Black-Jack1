@@ -29,6 +29,7 @@ import Menus from '../menus/Menus';
 import Caraousel from '../caraousel/Caraousel';
 import Restaurant from '../restaurant/Restaurant';
 import Screen from '../screens/Screen';
+import Managescreen from '../managescreen/Managescreen';
 
 
 
@@ -139,7 +140,7 @@ const Homepage = () => {
           <Routes>
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/Addrestaurant" element={<Addrestaurant />} />
-            
+            <Route path="/Managescreen" element={<Managescreen/>} />
             <Route path="/Restaurant" element={<Restaurant/>} />
             <Route path="/Managerestaurant" element={<Managerestaurant />} />
             <Route path="/Screen" element={<Screen/>} />

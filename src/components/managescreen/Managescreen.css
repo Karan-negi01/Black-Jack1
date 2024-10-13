@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.manage-screen-container{
+    width: 100%;
+    height: 90vh;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+    overflow-y: scroll;
+    
+    
+    
+}
+.manage-screen-box{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(128, 128, 128, 0.499);
+    width: 30%;
+    height: 34vh;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.manage-screen-background{
+    width: 100%;
+    height: 25vh;
+   
+    color: #fff;
+    background: rgba(65, 65, 65, 0.804);
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.manage-screen-name{
+    display: flex;
+    /* border: 2px solid red; */
+   
+    text-align: center;
+    margin-bottom: 10px;
+
+  
+    
+}
+.manage-screen-text{
+    /* border: 2px solid green; */
+    width: 45%;
+    align-content: center;
+    font-size: 20px;
+   
+}
+.manage-screen-dropdown{
+    width: 50%;
+    position: relative;
+   
+    
+}
+.select{
+    background: #3399FF;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px #3f3f3f solid;
+    padding: 5px;
+    height: 6vh;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+}
+.select:hover{
+    background: #3399ffc6;
+}
+
+.caret{
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-left: 6px solid #fff;
+    transition: 0.3s;
+}
+
+
+.manage-screen-dropdown-menu{
+    list-style: none;
+    width: 100%;
+    height: auto;
+    
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background: #fff;
+    color: #878787;
+    position: absolute;
+    top: 42px;
+    left: 0;
+}
+   
+   
+
+
+.manage-screen-dropdown-menu li{
+
+    margin: 5px 0;
+    cursor: pointer;
+    text-align: left;
+    align-content: center;
+    padding-left: 17px;
+    height: 5vh;
+    font-size: 20px;
+}
+
+.manage-screen-dropdown-menu li:hover{
+    background: #3399ffb4;
+    color: #fff;
+}
+
+
+
+.manage-screen-dropdown-menu {
+    
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.manage-screen-dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
