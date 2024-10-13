@@ -54,6 +54,8 @@ const Dashboard = () => {
 
     return (
         <div>
+          <div className="dashboard-content-container">
+
             <div className="dashboard-boxes">
 
                 <div className="box1">
@@ -87,6 +89,7 @@ const Dashboard = () => {
                 </div>
                 <Line data={data} options={options} height={420} />
             </div>
+          </div>
         </div>
     )
 }

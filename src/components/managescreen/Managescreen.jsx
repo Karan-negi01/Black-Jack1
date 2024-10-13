@@ -1,7 +1,7 @@
-import React from 'react'
+
 import './Managescreen.css'
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 
 const Managescreen = () => {
@@ -9,7 +9,11 @@ const Managescreen = () => {
 
 
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState('Select Content');
+    const [selectedOption, setSelectedOption] = useState(() => {
+        return localStorage.getItem('selectedOption') || 'Select Content';
+    });
+
+
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -17,7 +21,8 @@ const Managescreen = () => {
 
     const handleOptionClick = (option) => {
         setSelectedOption(option);
-        setIsOpen(false); // Close dropdown after selection
+        setIsOpen(false); 
+        localStorage.setItem('selectedOption', option);
     };
 
     return (
@@ -34,7 +39,7 @@ const Managescreen = () => {
 
                         </div>
                         {isOpen && (
-                            <ul className={`manage-screen-dropdown-menu ${isOpen ? 'show' : ''}`}>
+                             <ul className={`manage-screen-dropdown-menu ${isOpen ? 'show' : ''}`}>
                                 <li onClick={() => handleOptionClick('Static Image')}>Static Image</li>
                                 <li onClick={() => handleOptionClick('Video')}>Video</li>
                                 <li onClick={() => handleOptionClick('Carousel')}>Carousel</li>

@@ -8,93 +8,38 @@ const Screen = () => {
     const handlescreenmanage=()=>{
         navigate('/Managescreen')
     }
+    
+    const screensdata=[
+        { name: 'Reception'},
+        { name: 'Counter 1'},
+        { name: 'Counter 2'},
+        { name: 'Counter 3'},
+        { name: 'Counter 4'},
+        { name: 'Kitchen'},
+        { name: 'Left Gallery'},
+        { name: 'Mid Gallery'},
+        { name: 'Right Gallery'},
 
+    ]
   return (
-    <div>
-      <div className="screen-container">
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
+    
+    <div className="screen-container">
+    {screensdata.map((screen, index) => (
+        <div className="screen-box" key={index}>
+            <div className="screen-text">{screen.name}</div>
             <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
+                <button className="restrict">RESTRICT</button>
+                <button className="manage" onClick={handlescreenmanage}>MANAGE</button>
             </div>
         </div>
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
-            <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
-            </div>
-        </div>
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
-            <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
-            </div>
-        </div>
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
-            <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
-            </div>
-        </div>
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
-            <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
-            </div>
-        </div>
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
-            <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
-            </div>
-        </div>
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
-            <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
-            </div>
-        </div>
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
-            <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
-            </div>
-        </div>
-        <div className="screen-box">
-            <div className="screen-text">
-                Screen Name
-            </div>
-            <div className="screen-buttons">
-                <button className='restrict'>RESTRICT</button>
-                <button className='Manage' onClick={handlescreenmanage}>MANAGE</button>
-            </div>
-        </div>
-      </div>
-    </div>
+    ))}
+</div>
+            
+           
+        
+   
+    
+   
   )
 }
 
