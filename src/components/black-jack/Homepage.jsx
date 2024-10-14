@@ -4,23 +4,15 @@ import logo from '../assests/jack.png';
 import { RxDashboard } from "react-icons/rx";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import { IoFastFoodOutline } from "react-icons/io5";
-
 import { MdOutlineFeaturedPlayList } from "react-icons/md";
 import { FiActivity } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { CiMail } from "react-icons/ci";
 import { BsBrightnessHigh } from "react-icons/bs";
 import { CiCircleList } from "react-icons/ci";
-
 import { BiFoodMenu } from "react-icons/bi";  
-
-
-
-
 import { MdOutlineOndemandVideo } from "react-icons/md";
 import { GoRepoTemplate } from "react-icons/go";
-
-
 import {Routes, Route, useNavigate } from 'react-router-dom';
 import Addrestaurant from '../addrestaurant/Addrestaurant';
 import Managerestaurant from '../managerestaurant/Managerestaurant';
@@ -60,19 +52,6 @@ const Homepage = () => {
       navigate('/Caraousel');
     }
   };
-
-  
-
-
-
-  
-
-
-
-
-
-
-
 
   
 
