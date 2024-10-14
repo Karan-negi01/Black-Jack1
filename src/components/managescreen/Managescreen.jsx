@@ -2,11 +2,15 @@
 import './Managescreen.css'
 
 import React, { useState } from 'react';
+import {useNavigate } from 'react-router-dom';
 
 
 const Managescreen = () => {
 
-
+    const navigate = useNavigate();
+    const handleoptions = (path) => {
+        navigate(path);
+      };
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(() => {
@@ -19,12 +23,12 @@ const Managescreen = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleOptionClick = (option) => {
+    const handleOptionClick = (option, path) => {
         setSelectedOption(option);
-        setIsOpen(false); 
+        setIsOpen(false);
         localStorage.setItem('selectedOption', option);
-    };
-
+        handleoptions(path); 
+      };
     return (
 
         <div className="manage-screen-container">
@@ -40,8 +44,8 @@ const Managescreen = () => {
                         </div>
                         {isOpen && (
                              <ul className={`manage-screen-dropdown-menu ${isOpen ? 'show' : ''}`}>
-                                <li onClick={() => handleOptionClick('Static Image')}>Static Image</li>
-                                <li onClick={() => handleOptionClick('Video')}>Video</li>
+                                <li onClick={() => handleOptionClick('Static Image','/Screenchoose')}>Static Image</li>
+                                <li onClick={() => handleOptionClick('Video', '/Choosevideo' )}>Video</li>
                                 <li onClick={() => handleOptionClick('Carousel')}>Carousel</li>
                                 <li onClick={() => handleOptionClick('Template')}>Template</li>
                             </ul>

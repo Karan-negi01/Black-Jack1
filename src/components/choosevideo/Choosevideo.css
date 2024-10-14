@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.static-video-container {
+    width: 100%;
+    height: 85vh;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.video-preview {
+    width: 30%;
+    height: 30vh;
+    border: 1px solid rgba(128, 128, 128, 0.499);
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-container {
+    width: 100%;
+    height: 27vh;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.selected-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fits within the container without distortion */
+}
+
+.video-name {
+    width: 100%;
+    height: 4vh;
+    text-align: center;
+    font-size: 18px;
+    line-height: 4vh;
+    border: 1px solid rgba(128, 128, 128, 0.499);
+}
+
+.uploaded-video {
+    width: 100%;
+    height: 55vh;
+
+}
+
+
+
+.static-video-box {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.caraousel-image{
+    width: 23%;
+    height: 25vh;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.caraousel-image:hover {
+    opacity: 0.8;
+}

@@ -16,7 +16,7 @@ const Restaurant = () => {
         { name: 'Cafe Delight', screens: 10 },
         { name: 'Route 65', screens: 3 },
         { name: 'Delicious', screens: 8 },
-        { name: 'Veer JI', screens: 9 }
+        { name: 'Veer Ji', screens: 9 }
     ];
     
   return (

@@ -30,6 +30,8 @@ import Caraousel from '../caraousel/Caraousel';
 import Restaurant from '../restaurant/Restaurant';
 import Screen from '../screens/Screen';
 import Managescreen from '../managescreen/Managescreen';
+import Screenchoose from '../screenchoose/Screenchoose';
+import Choosevideo from '../choosevideo/Choosevideo';
 
 
 
@@ -144,6 +146,8 @@ const Homepage = () => {
             <Route path="/Restaurant" element={<Restaurant/>} />
             <Route path="/Managerestaurant" element={<Managerestaurant />} />
             <Route path="/Screen" element={<Screen/>} />
+            <Route path="/Screenchoose" element={<Screenchoose/>} />
+            <Route path="/Choosevideo" element={<Choosevideo/>} />
             <Route path="/Menus" element={<Menus/>} />
             <Route path="/Caraousel" element={<Caraousel />} />
           </Routes>
