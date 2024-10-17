@@ -1,0 +1,303 @@
+ <div className="left_dashboard">
+        <img className='logo' src={logo} alt='logo' />
+        <div className="dashboard-sidebar">
+          <ul className='sidebar-items'>
+            <li onClick={() => handleMenuClick('Dashboard')}><RxDashboard className='sidebar-icons' /><p className='sidebar-heading'>Dashboard</p></li>
+            <li onClick={() => handleMenuClick('Add Your Restaurant')}><IoMdCheckboxOutline className='sidebar-icons' /><p className='sidebar-heading'>Add Your Restaurant</p></li>
+            <li onClick={() => handleMenuClick('Manage Restaurant')}><IoFastFoodOutline className='sidebar-icons' /><p className='sidebar-heading'>Manage Restaurant</p></li>
+            <li onClick={() => toggleSubMenu(1)}><RiPlayList2Line className='sidebar-icons' /><p className='sidebar-heading'>Your Playlist</p>
+            </li>
+            <div className={`sub-menu ${openSubMenu === 1 ? 'show' : ''}`}>
+
+
+              <p onClick={() => handleMenuClick('Menus')}>Menus</p>
+              <p onClick={() => handleMenuClick('Caraousel')}>Caraousel</p>
+
+            </div>
+
+            <li onClick={() => handleMenuClick('Portfolio')}><MdOutlineFeaturedPlayList className='sidebar-icons' /><p className='sidebar-heading'>Portfolio</p></li>
+            <li onClick={() => handleMenuClick('Recent Activity')}><FiActivity className='sidebar-icons' /><p className='sidebar-heading'>Recent Activity</p></li>
+            <li onClick={() => handleMenuClick('Notifications')}><IoMdNotificationsOutline className='sidebar-icons' /><p className='sidebar-heading'>Notifiations</p></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
+      api
+
+
+       const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzA0ZmZjYTMyNWZjMjhiNzQ3M2E5NmIiLCJpYXQiOjE3MjgzODEzNzR9.6GyQCpxiKzrER0o46qhSIAIiJWYByaLKCkyPWIvjmdc';
+
+      const response = await axios.post('https://tv-app-cloud-backend.onrender.com/restaurant/add', restaurantDetails,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      console.log(response.data);
+      setSuccessMessage('Success');
+
+
+
+    } catch (error) {
+      setErrorMessage('Failed to add restaurant. Please try again.');
+      
+      console.log("failed")
+    }
+  };
+
+
+
+
+
+addd
+  {selectedItem === 'Add Your Restaurant' && (
+            <div>
+              <div className="wrapper">
+                <h2>Add Your Restaurant</h2>
+                <form onSubmit={handleFormSubmit}>
+                  <div className="input-box">
+                    <input
+                      type="text"
+                      placeholder="Restaurant Name"
+                      name="name"
+                      value={restaurantDetails.name}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  <div className="input-box">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      value={restaurantDetails.email}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  <div className="input-box">
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      name="password"
+                      value={restaurantDetails.password}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="input-box button">
+                    <input type="submit" value="Add Restaurant" />
+                  </div>
+                </form>
+                {successMessage && <p className="success-message">{successMessage}</p>}
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+              </div>
+            </div>
+          )}
+
+
+
+
+          api
+
+
+           const handleFormSubmit = async (e) => {
+    e.preventDefault();
+      try {
+      const response = await axios.post('https://tv-app-cloud-backend.onrender.com/restaurant/add', restaurantDetails,{ headers: {
+        
+        'Content-Type': 'application/json'
+      }}); // Replace with your actual API endpoint
+      console.log("API response:", response);
+     
+      if (response.status === 200) {
+        setSuccessMessage('Restaurant added successfully!');
+        setErrorMessage('');
+        setRestaurantDetails({ name: '', email: '', password: '' }); // Clear form
+      }
+    } catch (error) {
+      setErrorMessage('Failed to add restaurant. Please try again.');
+      setSuccessMessage('');
+      console.log("failed")
+    }
+  };
+
+
+
+
+
+  menus/Caraousel<div className="playlist-container">
+              
+                  <div className="restro-menu-header">
+
+                    <p className='restro-menu-heading'>Menus</p>
+                    <MdAddToPhotos className='restro-menu-icons' />
+                  </div>
+                  <div className="restro-menu-box">
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                    <img src={menu} className='menu-image' alt='menu'></img>
+                  </div>
+           
+                
+              </div>
+            </div>
+          )}
+
+{selectedItem === 'Caraousel' && (
+            <div>
+              <div className="playlist-container">
+              
+                  <div className="restro-menu-header">
+
+                    <p className='restro-menu-heading'>Caraousel</p>
+                    <MdAddToPhotos className='restro-menu-icons' />
+                  </div>
+                  <div className="restro-menu-box">
+                  <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                    <img src={caraousel} className='caraousel-image' alt='caraousel'></img>
+                  </div>
+           
+                
+                
+                    
+
+               
+              </div>
+            </div>
+          )}
+
+
+
+
+          dropdown className.dashboard-sidebar{
+    width: 100%;
+    margin-top: 50px;
+    height: 75vh;
+   
+
+    
+    
+  
+
+}
+
+/* .sidebar-items{
+   
+    list-style: none;
+    cursor: pointer;
+    align-items: center;
+} */
+
+
+/* .sidebar-items li{
+ 
+    align-content: center;
+   
+    height:70px;
+    display: flex;  
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+}
+.sidebar-items li:hover{
+    background: #a3a2a2a2;
+} */
+.sidebar-heading{
+
+    width: 76%;
+    margin-left: 7px;
+    margin-top: 4px;
+    font-size: 18px;
+}
+
+.sidebar-icons {
+    font-size: 35px;
+    width: 20%;
+    
+   
+    
+}
+/* .sub-menu{
+    
+    transition: 0.5s ease;
+    margin-left: 64px;
+    
+    height: 0;
+    opacity: 0;
+    
+    
+    width: 100%;
+} */
+
+
+/* .sub-menu p{
+  
+   
+    height: 50px;
+    align-content: center;
+    font-size: 18px;
+}
+.sub-menu p:hover{
+    background: #a3a2a2a3;
+}
+
+ .sub-menu.show{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+  } */

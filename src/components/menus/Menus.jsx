@@ -5,37 +5,37 @@ import { MdAddToPhotos } from "react-icons/md";
 const Menus = () => {
   return (
     <div>
-       <div className="playlist-container">
+      <div className="playlist-container">
 
-<div className="restro-menu-header">
+        <div className="restro-menu-header">
 
-  <p className='restro-menu-heading'>Menus</p>
-  <MdAddToPhotos className='restro-menu-icons' />
-</div>
-<div className="restro-menu-box">
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-  <img src={menu} className='menu-image' alt='menu'></img>
-</div>
-</div>
+          <p className='restro-menu-heading'>Menus</p>
+          <MdAddToPhotos className='restro-menu-icons' />
+        </div>
+        <div className="restro-menu-box">
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+          <img src={menu} className='menu-image' alt='menu'></img>
+        </div>
+      </div>
 
     </div>
   )

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.static-image-container {
+.choosecaraousel-image-container {
     width: 100%;
     height: 85vh;
     margin-top: 15px;
@@ -13,7 +13,7 @@
     background: #fff;
 }
 
-.image-preview {
+.choosecaraousel-image-preview {
     width: 30%;
     height: 30vh;
     border: 1px solid rgba(128, 128, 128, 0.499);
@@ -22,7 +22,7 @@
     flex-direction: column;
 }
 
-.image-container {
+.choosecaraousel-imagee-container {
     width: 100%;
     height: 27vh;
     /* border: 2px solid red; */
@@ -30,15 +30,25 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
 .selected-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; 
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    object-fit: contain; /* Ensures the image fits within the container without distortion */
+}
+.selected-image.active {
+    opacity: 1;
 }
 
-.image-name {
+
+.choosecaraousel-image-name {
     width: 100%;
     height: 4vh;
     text-align: center;
@@ -47,7 +57,7 @@
     border: 1px solid rgba(128, 128, 128, 0.499);
 }
 
-.uploaded-static-images {
+.uploaded-choosecaraousel-images {
     width: 100%;
     height: 55vh;
 
@@ -55,7 +65,7 @@
 
 
 
-.static-image-box {
+.choosecaraousel-image-box {
     width: 100%;
     height: 50vh;
     display: flex;
@@ -81,3 +91,9 @@
 .menu-image:hover {
     opacity: 0.8;
 }
+.menu-image.selected {
+    opacity: 0.5; 
+}
+
+
+

@@ -24,6 +24,7 @@ import Screen from '../screens/Screen';
 import Managescreen from '../managescreen/Managescreen';
 import Screenchoose from '../screenchoose/Screenchoose';
 import Choosevideo from '../choosevideo/Choosevideo';
+import Choosecaraousel from '../choosecaraousel/Choosecaraousel';
 
 
 
@@ -127,6 +128,8 @@ const Homepage = () => {
             <Route path="/Screen" element={<Screen/>} />
             <Route path="/Screenchoose" element={<Screenchoose/>} />
             <Route path="/Choosevideo" element={<Choosevideo/>} />
+            <Route path="/Choosecaraousel" element={<Choosecaraousel/>} />
+
             <Route path="/Menus" element={<Menus/>} />
             <Route path="/Caraousel" element={<Caraousel />} />
           </Routes>

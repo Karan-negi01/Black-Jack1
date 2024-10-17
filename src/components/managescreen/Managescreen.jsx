@@ -46,7 +46,7 @@ const Managescreen = () => {
                              <ul className={`manage-screen-dropdown-menu ${isOpen ? 'show' : ''}`}>
                                 <li onClick={() => handleOptionClick('Static Image','/Screenchoose')}>Static Image</li>
                                 <li onClick={() => handleOptionClick('Video', '/Choosevideo' )}>Video</li>
-                                <li onClick={() => handleOptionClick('Carousel')}>Carousel</li>
+                                <li onClick={() => handleOptionClick('Carousel', '/Choosecaraousel')}>Carousel</li>
                                 <li onClick={() => handleOptionClick('Template')}>Template</li>
                             </ul>
                         )}

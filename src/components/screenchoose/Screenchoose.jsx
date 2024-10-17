@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Screenchoose.css';
-import menu from '../assests/menu.png'; // Assuming all images are the same
+import menu from '../assests/menu.png'; 
 
 const Screenchoose = () => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -9,8 +9,8 @@ const Screenchoose = () => {
         setSelectedImage(image);
     };
 
-    // Array of images (in this case, all are 'menu')
-    const menuImages = Array(20).fill(menu); // Array with 20 'menu' images
+    
+    const menuImages = Array(20).fill(menu); 
 
     return (
         <div>
